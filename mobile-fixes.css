@@ -35,6 +35,10 @@
         width: 100%;
         height: auto;
     }
+
+    .hero-tag {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -45,9 +49,7 @@
     }
 
     .hero-tag {
-        font-size: 0.72rem;
-        letter-spacing: 2.5px;
-        line-height: 1.5;
+        display: none;
     }
 
     .hero-stat-value {
