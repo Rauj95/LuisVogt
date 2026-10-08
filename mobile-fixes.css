@@ -1,3 +1,15 @@
+/* The hero tag is removed completely. */
+.hero-tag {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
+}
+
 /* Mobile Hero and portrait fixes */
 @media (max-width: 768px) {
     .hero {
@@ -36,27 +48,10 @@
         height: auto;
     }
 
-    .hero-tag {
-        display: none !important;
-        visibility: hidden !important;
-        width: 0 !important;
-        height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border: 0 !important;
-        overflow: hidden !important;
-    }
-}
-
-@media (max-width: 480px) {
     .hero-name {
         font-size: clamp(3.5rem, 17vw, 5.5rem);
         line-height: 0.9;
         letter-spacing: 2px;
-    }
-
-    .hero-tag {
-        display: none !important;
     }
 
     .hero-stat-value {
