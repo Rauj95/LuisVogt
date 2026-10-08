@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung | Luis Vogt | Ski Alpin</title>
+    
+    <!-- Meta-Tags -->
+    <meta name="robots" content="noindex, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f1623;
+            --accent: #c9a84c;
+            --accent-light: #dfc06a;
+            --gray-100: #f6f5f2;
+            --gray-200: #e7e5e0;
+            --gray-400: #94a3b8;
+            --gray-600: #64748b;
+            --gray-800: #1e293b;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 40px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+            background: rgba(26, 31, 46, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.3);
+        }
+
+        .nav-brand {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand .accent {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+            display: block;
+        }
+
+        /* Mobile Menu Backdrop */
+        .nav-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-backdrop.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* ========== LEGAL CONTENT ========== */
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 40px 80px;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .legal-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--primary);
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        .legal-section {
+            margin-bottom: 40px;
+        }
+
+        .legal-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+            margin-top: 30px;
+            margin-bottom: 16px;
+        }
+
+        .legal-section h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-top: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .legal-section p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--gray-600);
+            margin-bottom: 16px;
+        }
+
+        .legal-section ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .legal-section li {
+            margin-bottom: 8px;
+        }
+
+        .legal-section a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .legal-section a:hover {
+            color: var(--primary);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            padding: 60px;
+            background: var(--primary);
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--gray-100);
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .footer-social a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+        }
+
+        .footer-legal {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-legal a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .footer-legal a:hover {
+            color: var(--accent);
+        }
+
+        .footer-copy {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 24px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(26,31,46, 0.98);
+                flex-direction: column;
+                padding: 100px 40px 40px;
+                transition: right 0.4s ease;
+                gap: 20px;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .legal-container {
+                padding: 100px 24px 60px;
+            }
+
+            footer {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+    <!-- Favicon & Webmanifest -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar" role="navigation" aria-label="Hauptnavigation">
+        <a href="index.html" class="nav-brand"><span class="accent">LUIS</span> VOGT</a>
+        <ul class="nav-links" id="navLinks" role="menubar">
+            <li role="none"><a href="index.html#about" role="menuitem" onclick="closeMenu()">Über mich</a></li>
+            <li role="none"><a href="index.html#career" role="menuitem" onclick="closeMenu()">Karriere</a></li>
+            <li role="none"><a href="index.html#gallery" role="menuitem" onclick="closeMenu()">Galerie</a></li>
+            <li role="none"><a href="index.html#profile" role="menuitem" onclick="closeMenu()">Steckbrief</a></li>
+            <li role="none"><a href="index.html#results" role="menuitem" onclick="closeMenu()">Ergebnisse</a></li>
+            <li role="none"><a href="index.html#sponsors" role="menuitem" onclick="closeMenu()">Partner</a></li>
+            <li role="none"><a href="index.html#contact" role="menuitem" onclick="closeMenu()">Kontakt</a></li>
+            <li role="none"><a href="https://www.instagram.com/luis.vogt_21/" target="_blank" rel="noopener noreferrer" role="menuitem">Instagram</a></li>
+            <li role="none"><a href="https://www.fis-ski.com/DB/general/athlete-biography.html?sectorcode=al&competitorid=229136" target="_blank" rel="noopener noreferrer" role="menuitem">FIS Profil</a></li>
+        </ul>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <!-- ========== LEGAL CONTENT ========== -->
+    <main class="legal-container">
+        <div class="section-label">Rechtliche Hinweise</div>
+        <h1 class="legal-title">Datenschutzerklärung</h1>
+        
+        <div class="legal-section">
+            <h2>1. Datenschutz auf einen Blick</h2>
+            <h3>Allgemeine Hinweise</h3>
+            <p>
+                Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.
+            </p>
+
+            <h3>Datenerfassung auf dieser Website</h3>
+            <p>
+                <strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br>
+                Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Bereich "Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung sowie dem Impressum dieser Website entnehmen.
+            </p>
+            <p>
+                <strong>Wie erfassen wir Ihre Daten?</strong><br>
+                Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich beispielsweise um Daten handeln, die Sie uns per E-Mail zukommen lassen.
+            </p>
+            <p>
+                Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten wie beispielsweise Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs. Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
+            </p>
+            <p>
+                <strong>Wofür nutzen wir Ihre Daten?</strong><br>
+                Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
+            </p>
+            <p>
+                <strong>Welche Rechte haben Sie bezüglich Ihrer Daten?</strong><br>
+                Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+            </p>
+            <p>
+                Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.
+            </p>
+        </div>
+
+        <div class="legal-section">
+            <h2>2. Allgemeine Hinweise und Pflichtinformationen</h2>
+            <h3>Datenschutz</h3>
+            <p>
+                Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+            </p>
+            <p>
+                Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.
+            </p>
+            <p>
+                Wir weisen darauf hin, dass die Datenübertragung im Internet, beispielsweise bei der Kommunikation per E-Mail, Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+            </p>
+
+            <h3>Hinweis zur verantwortlichen Stelle</h3>
+            <p>
+                Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+            </p>
+            <p>
+                Luis Vogt<br>
+                c/o RK&P Sportmanagement GmbH<br>
+                Seestraße 33<br>
+                5330 Fuschl am See<br>
+                Österreich<br>
+                E-Mail: <a href="mailto:radacher@rkp-sport.com">radacher@rkp-sport.com</a>
+            </p>
+            <p>
+                Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (beispielsweise Namen, E-Mail-Adressen) entscheidet.
+            </p>
+
+            <h3>Speicherdauer</h3>
+            <p>
+                Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschbegehren geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, es sei denn, wir haben andere gesetzlich zulässige Gründe für die Speicherung Ihrer personenbezogenen Daten (beispielsweise steuer- oder handelsrechtliche Aufbewahrungsfristen). In den letztgenannten Fällen erfolgt die Löschung nach Fortfall dieser Gründe.
+            </p>
+
+            <h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h3>
+            <p>
+                Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO beziehungsweise Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdrücklichen Einwilligung in die Übertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung zudem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO.
+            </p>
+            <p>
+                Ist die Datenverarbeitung zur Erfüllung eines Vertrags oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erfüllung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. Über die jeweils im Einzelfall einschlägigen Rechtsgrundlagen wird in den folgenden Absätzen dieser Datenschutzerklärung informiert.
+            </p>
+
+            <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+            <p>
+                Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+            </p>
+
+            <h3>Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</h3>
+            <p>
+                Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.
+            </p>
+
+            <h3>Recht auf Datenübertragbarkeit</h3>
+            <p>
+                Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.
+            </p>
+
+            <h3>Auskunft, Löschung und Berichtigung</h3>
+            <p>
+                Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden.
+            </p>
+
+            <h3>Recht auf Einschränkung der Verarbeitung</h3>
+            <p>
+                Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu können Sie sich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:
+            </p>
+            <ul>
+                <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
+                <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig geschah oder geschieht, können Sie statt der Löschung die Einschränkung der Datenverarbeitung verlangen.</li>
+                <li>Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
+                <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
+            </ul>
+            <p>
+                Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten (von ihrer Speicherung abgesehen) nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.
+            </p>
+
+            <h3>SSL- beziehungsweise TLS-Verschlüsselung</h3>
+            <p>
+                Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie beispielsweise Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- beziehungsweise TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von "http://" auf "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+            </p>
+            <p>
+                Wenn die SSL- beziehungsweise TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.
+            </p>
+        </div>
+
+        <div class="legal-section">
+            <h2>3. Datenerfassung auf dieser Website</h2>
+            <h3>Server-Log-Dateien</h3>
+            <p>
+                Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+            </p>
+            <ul>
+                <li>Browsertyp und Browserversion</li>
+                <li>Verwendetes Betriebssystem</li>
+                <li>Referrer URL (die zuvor besuchte Seite)</li>
+                <li>Hostname des zugreifenden Rechners</li>
+                <li>Uhrzeit der Serveranfrage</li>
+                <li>IP-Adresse</li>
+            </ul>
+            <p>
+                Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+            </p>
+            <p>
+                Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website. Hierzu müssen die Server-Logfiles erfasst werden.
+            </p>
+
+            <h3>Anfrage per E-Mail oder Telefon</h3>
+            <p>
+                Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (beispielsweise Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+            </p>
+            <p>
+                Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.
+            </p>
+            <p>
+                Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (beispielsweise nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen (insbesondere gesetzliche Aufbewahrungsfristen) bleiben unberührt.
+            </p>
+        </div>
+
+        <div class="legal-section">
+            <h2>4. Hosting und Content Delivery Networks (CDN)</h2>
+            <h3>Externes Hosting</h3>
+            <p>
+                Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich vor allem um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Webseitenzugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
+            </p>
+            <p>
+                Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
+            </p>
+            <p>
+                Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.
+            </p>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-name">LUIS VOGT</div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/luis.vogt_21/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.fis-ski.com/DB/general/athlete-biography.html?sectorcode=al&competitorid=229136" target="_blank" rel="noopener noreferrer">FIS Profil</a>
+        </div>
+        <div class="footer-legal">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="footer-copy">&copy; 2026 Luis Vogt. Alle Rechte vorbehalten. · Fotos: GEPA Pictures</div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const navLinks = document.getElementById('navLinks');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navBackdrop = document.getElementById('navBackdrop');
+
+        function toggleMenu() {
+            const isOpen = navLinks.classList.toggle('active');
+            navBackdrop.classList.toggle('active', isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', isOpen);
+            hamburgerBtn.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            navBackdrop.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            hamburgerBtn.setAttribute('aria-label', 'Menü öffnen');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', toggleMenu);
+        navBackdrop.addEventListener('click', closeMenu);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
