@@ -1,0 +1,7 @@
+/* Ensure the mobile fixes stylesheet is loaded on every page */
+/* The stylesheet itself hides .hero-tag on mobile. */
+/* Add this file only as a Netlify header configuration. */
+
+/*
+  Link: </mobile-fixes.css>; rel="stylesheet"
+*/
