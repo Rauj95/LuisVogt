@@ -55,6 +55,12 @@
             box-shadow: 0 2px 30px rgba(0,0,0,0.3);
         }
 
+        .nav-logo {
+            height: 36px;
+            width: auto;
+            display: block;
+        }
+
         .nav-brand {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.6rem;
@@ -308,9 +314,10 @@
         }
     </style>
     <!-- Favicon & Webmanifest -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="Images/logo-lv-navy.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="manifest" href="site.webmanifest">
 </head>
@@ -318,7 +325,7 @@
 
     <!-- ========== NAVIGATION ========== -->
     <nav id="navbar" role="navigation" aria-label="Hauptnavigation">
-        <a href="index.html" class="nav-brand"><span class="accent">LUIS</span> VOGT</a>
+        <a href="index.html" class="nav-brand"><img class="nav-logo" src="Images/logo-lv-white.svg" alt="" width="450" height="444"><span class="accent">LUIS</span> VOGT</a>
         <ul class="nav-links" id="navLinks" role="menubar">
             <li role="none"><a href="index.html#about" role="menuitem" onclick="closeMenu()">Über mich</a></li>
             <li role="none"><a href="index.html#career" role="menuitem" onclick="closeMenu()">Karriere</a></li>
