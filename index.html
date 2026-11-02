@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Luis Vogt | Ski Alpin | Abfahrt & Super-G">
     <meta property="og:description" content="Deutscher Skirennfahrer im Weltcup. Abfahrt und Super-G. Platz 8 auf der Streif in Kitzbühel 2026.">
-    <meta property="og:image" content="https://www.PLATZHALTER-DOMAIN.de/images/OG-IMAGE.jpg">
+    <meta property="og:image" content="https://www.PLATZHALTER-DOMAIN.de/Images/og-image.jpg">
     <meta property="og:url" content="https://www.PLATZHALTER-DOMAIN.de/">
     <meta property="og:locale" content="de_DE">
 
@@ -24,12 +24,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Luis Vogt | Ski Alpin">
     <meta name="twitter:description" content="Deutscher Skirennfahrer im Weltcup. Abfahrt und Super-G. Platz 8 auf der Streif in Kitzbühel 2026.">
-    <meta name="twitter:image" content="https://www.PLATZHALTER-DOMAIN.de/images/OG-IMAGE.jpg">
+    <meta name="twitter:image" content="https://www.PLATZHALTER-DOMAIN.de/Images/og-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="Images/logo-lv-navy.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png">
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -38,7 +39,7 @@
         "@type": "Person",
         "name": "Luis Vogt",
         "url": "https://www.PLATZHALTER-DOMAIN.de/",
-        "image": "https://www.PLATZHALTER-DOMAIN.de/images/OG-IMAGE.jpg",
+        "image": "https://www.PLATZHALTER-DOMAIN.de/Images/og-image.jpg",
         "jobTitle": "Professioneller Skirennfahrer",
         "birthDate": "2002-02-21",
         "birthPlace": {
@@ -67,8 +68,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Hero-Bild vorladen (LCP-Optimierung): Desktop Querformat, Mobile Hochformat -->
-    <link rel="preload" as="image" href="images/lowres_8232_GEPA-20260115-101-156-0098.jpg" media="(min-width: 769px)">
-    <link rel="preload" as="image" href="images/lowres_2319_GEPA-20260124-101-136-0131.jpg" media="(max-width: 768px)">
+    <link rel="preload" as="image" href="Images/lowres_8232_GEPA-20260115-101-156-0098.jpg" media="(min-width: 769px)">
+    <link rel="preload" as="image" href="Images/lowres_2319_GEPA-20260124-101-136-0131.jpg" media="(max-width: 768px)">
     <style>
         :root {
             --primary: #0f1623;
@@ -146,6 +147,12 @@
             background: rgba(26,31,46, 0.95);
             backdrop-filter: blur(20px);
             box-shadow: 0 2px 30px rgba(0,0,0,0.3);
+        }
+
+        .nav-logo {
+            height: 36px;
+            width: auto;
+            display: block;
         }
 
         .nav-brand {
@@ -275,7 +282,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('images/lowres_8232_GEPA-20260115-101-156-0098.jpg');
+            background-image: url('Images/lowres_8232_GEPA-20260115-101-156-0098.jpg');
             background-size: cover;
             background-position: center 30%;
             transform: scale(1.05);
@@ -304,6 +311,14 @@
             z-index: 2;
             padding: 0 60px 80px;
             max-width: 900px;
+        }
+
+        .hero-logo {
+            display: block;
+            width: clamp(72px, 9vw, 120px);
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 14px rgba(0,0,0,0.45));
         }
 
         .hero-tag {
@@ -680,7 +695,7 @@
         .highlight-bg {
             position: absolute;
             inset: 0;
-            background-image: url('images/lowres_2319_GEPA-20260124-101-136-0131.jpg');
+            background-image: url('Images/lowres_2319_GEPA-20260124-101-136-0131.jpg');
             background-size: cover;
             background-position: center 13%;
         }
@@ -1311,7 +1326,7 @@
 
             /* Art Direction: Hochformat-Bild auf Mobile – der Athlet bleibt sichtbar */
             .hero-bg {
-                background-image: url('images/lowres_2319_GEPA-20260124-101-136-0131.jpg');
+                background-image: url('Images/lowres_2319_GEPA-20260124-101-136-0131.jpg');
                 background-position: center 20%;
             }
 
@@ -1439,7 +1454,7 @@
 
     <!-- ========== NAVIGATION ========== -->
     <nav id="navbar" aria-label="Hauptnavigation">
-        <a href="#" class="nav-brand"><span class="accent">LUIS</span> VOGT</a>
+        <a href="#" class="nav-brand"><img class="nav-logo" src="Images/logo-lv-white.svg" alt="" width="450" height="444"><span class="accent">LUIS</span> VOGT</a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#about" onclick="closeMenu()">Über mich</a></li>
             <li><a href="#career" onclick="closeMenu()">Karriere</a></li>
@@ -1470,6 +1485,7 @@
         <div class="hero-bg" role="img" aria-label="Luis Vogt bei der Abfahrt im Weltcup"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
+            <img class="hero-logo" src="Images/logo-lv-white.svg" alt="" width="450" height="444">
             <h1 class="hero-name">LUIS <br><span class="accent">VOGT</span></h1>
             <p class="hero-sub">Deutscher Skirennfahrer in den Speed-Disziplinen. Immer 110&nbsp;% motiviert.</p>
             <div class="hero-stats">
@@ -1497,7 +1513,7 @@
     <section class="about" id="about">
         <div class="about-grid">
             <div class="about-image-wrapper">
-                <img class="about-image" src="images/lowres_6114_GEPA-20260124-101-136-0136.jpg" alt="Luis Vogt im Zielraum nach seinem 8. Platz bei der Abfahrt in Kitzbühel" loading="lazy">
+                <img class="about-image" src="Images/lowres_6114_GEPA-20260124-101-136-0136.jpg" alt="Luis Vogt im Zielraum nach seinem 8. Platz bei der Abfahrt in Kitzbühel" loading="lazy">
                 <div class="about-image-accent" aria-hidden="true"></div>
                 <div class="about-image-accent-br" aria-hidden="true"></div>
             </div>
@@ -1626,31 +1642,31 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item large" data-caption="Weite Sprünge = Viel Geschwindigkeit">
-                <img src="images/Sprung.jpg" alt="Luis Vogt beim weiten Sprung während der Abfahrt, was hohe Geschwindigkeit signalisiert" loading="lazy" width="800" height="600">
+                <img src="Images/Sprung.JPG" alt="Luis Vogt beim weiten Sprung während der Abfahrt, was hohe Geschwindigkeit signalisiert" loading="lazy" width="800" height="600">
                 <div class="gallery-item-overlay">
                     <span class="gallery-item-label">Weite Sprünge = Viel Geschwindigkeit</span>
                 </div>
             </div>
             <div class="gallery-item small" data-caption="Wengen · Lauberhorn">
-                <img src="images/lowres_7135_GEPA-20260113-101-125-0050.jpg" alt="Luis Vogt bei der Lauberhorn Abfahrt in Wengen" loading="lazy" width="600" height="400">
+                <img src="Images/lowres_7135_GEPA-20260113-101-125-0050.jpg" alt="Luis Vogt bei der Lauberhorn Abfahrt in Wengen" loading="lazy" width="600" height="400">
                 <div class="gallery-item-overlay">
                     <span class="gallery-item-label">Wengen · Lauberhorn</span>
                 </div>
 			</div>
             <div class="gallery-item small" data-caption="Im Ziel · Gröden">
-                <img src="images/lowres_1500_GEPA-20251218-101-133-0101.jpg" alt="Luis Vogt im Zielraum von Gröden, die Skibrille hochschiebend" loading="lazy" width="600" height="400">
+                <img src="Images/lowres_1500_GEPA-20251218-101-133-0101.jpg" alt="Luis Vogt im Zielraum von Gröden, die Skibrille hochschiebend" loading="lazy" width="600" height="400">
                 <div class="gallery-item-overlay">
                     <span class="gallery-item-label">Im Ziel · Gröden</span>
                 </div>
 			</div>
             <div class="gallery-item small" data-caption="Voller Fokus">
-                <img src="images/focus.jpg" alt="Voller Fokus" loading="lazy" width="600" height="400">
+                <img src="Images/focus.jpg" alt="Voller Fokus" loading="lazy" width="600" height="400">
                 <div class="gallery-item-overlay">
                     <span class="gallery-item-label">Fokus</span>
                 </div>
 			</div>
             <div class="gallery-item small" data-caption="Heimspiel in Garmisch">
-                <img src="images/Heimspiel.jpg" alt="Heimspiel in Garmisch" loading="lazy" width="600" height="400">
+                <img src="Images/Heimspiel.jpg" alt="Heimspiel in Garmisch" loading="lazy" width="600" height="400">
                 <div class="gallery-item-overlay">
                     <span class="gallery-item-label">Heimspiel in Garmisch</span>
                 </div>					
@@ -1741,10 +1757,10 @@
                 <h3 class="sponsors-category-title">Sponsoren</h3>
                 <div class="sponsors-grid">
                     <a href="https://www.rau-gmbh.de" target="_blank" rel="noopener noreferrer" aria-label="RAU GmbH Website besuchen">
-                        <img class="sponsor-logo" src="images/Logo_RAU_4c.png" alt="RAU GmbH Logo" loading="lazy" width="150" height="50">
+                        <img class="sponsor-logo" src="Images/Logo_RAU_4c.png" alt="RAU GmbH Logo" loading="lazy" width="150" height="50">
                     </a>
                     <a href="https://www.werkbank360.de" target="_blank" rel="noopener noreferrer" aria-label="werkbank360 Website besuchen">
-                        <img class="sponsor-logo" src="images/logo_werkbank360.png" alt="werkbank360 Logo" loading="lazy" width="200" height="50">
+                        <img class="sponsor-logo" src="Images/logo_werkbank360.png" alt="werkbank360 Logo" loading="lazy" width="200" height="50">
                     </a>
                 </div>
             </div>
@@ -1753,16 +1769,16 @@
                 <h3 class="sponsors-category-title">Ausrüster</h3>
                 <div class="sponsors-grid equipment-grid">
                     <a href="https://www.rossignol.com" target="_blank" rel="noopener noreferrer" aria-label="Rossignol Website besuchen">
-                        <img class="sponsor-logo" src="images/Rossignol.png" alt="Rossignol Logo" loading="lazy" width="300" height="59">
+                        <img class="sponsor-logo" src="Images/Rossignol.png" alt="Rossignol Logo" loading="lazy" width="300" height="59">
                     </a>
                     <a href="https://www.leki.com" target="_blank" rel="noopener noreferrer" aria-label="Leki Website besuchen">
-                        <img class="sponsor-logo" src="images/logo_large.png" alt="Leki Logo" loading="lazy" width="200" height="100">
+                        <img class="sponsor-logo" src="Images/logo_large.png" alt="Leki Logo" loading="lazy" width="200" height="100">
                     </a>
                     <a href="https://www.uvex.de" target="_blank" rel="noopener noreferrer" aria-label="Uvex Website besuchen">
-                        <img class="sponsor-logo" src="images/uvex.png" alt="Uvex Logo" loading="lazy" width="200" height="100">
+                        <img class="sponsor-logo" src="Images/Uvex.png" alt="Uvex Logo" loading="lazy" width="200" height="100">
                     </a>
                     <a href="https://www.autohaus-osenstaetter.de" target="_blank" rel="noopener noreferrer" aria-label="osenstaetter Website besuchen">
-                        <img class="sponsor-logo" src="images/Osenstätter.png" alt="Osenstaetter Logo" loading="lazy" width="200" height="100">
+                        <img class="sponsor-logo" src="Images/Osenstätter.png" alt="Osenstaetter Logo" loading="lazy" width="200" height="100">
                     </a>
 
                 </div>
